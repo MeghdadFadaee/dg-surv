@@ -1,0 +1,24 @@
+{% extends "admin/base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ title }} | Survey Studio{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+{% endblock %}
+
+{% block responsive %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'surveys/admin.css' %}?v=20260502-dark-admin">
+{% endblock %}
+
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}">Survey Studio</a></div>
+{% if subtitle %}<div id="site-subtitle">{{ subtitle }}</div>{% endif %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

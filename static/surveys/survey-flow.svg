@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="720" viewBox="0 0 980 720" role="img" aria-labelledby="title desc">
+  <title id="title">Survey workflow</title>
+  <desc id="desc">Admin creates a survey, publishes it to the API, and clients submit responses.</desc>
+  <rect width="980" height="720" fill="#f8fbfd"/>
+  <rect x="58" y="64" width="864" height="592" rx="24" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <rect x="108" y="118" width="230" height="150" rx="14" fill="#ecfdf5" stroke="#99f6e4" stroke-width="2"/>
+  <rect x="375" y="118" width="230" height="150" rx="14" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+  <rect x="642" y="118" width="230" height="150" rx="14" fill="#fff7ed" stroke="#fed7aa" stroke-width="2"/>
+  <text x="138" y="160" fill="#0f766e" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Admin</text>
+  <text x="405" y="160" fill="#1d4ed8" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Published API</text>
+  <text x="672" y="160" fill="#b45309" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Responses</text>
+  <text x="138" y="202" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="17">Create surveys</text>
+  <text x="138" y="232" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="17">Add questions</text>
+  <text x="405" y="202" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="17">Fetch schema</text>
+  <text x="405" y="232" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="17">Render forms</text>
+  <text x="672" y="202" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="17">Validate answers</text>
+  <text x="672" y="232" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="17">Store results</text>
+  <path d="M348 193H365" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M592 193H622" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M358 181L371 193L358 205" fill="none" stroke="#64748b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M612 181L625 193L612 205" fill="none" stroke="#64748b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="108" y="338" width="764" height="222" rx="16" fill="#12212f"/>
+  <text x="146" y="386" fill="#93e2d7" font-family="Consolas, monospace" font-size="17" font-weight="700">POST /api/surveys/customer-feedback/responses/</text>
+  <text x="146" y="430" fill="#ffffff" font-family="Consolas, monospace" font-size="16">{</text>
+  <text x="176" y="462" fill="#dbeafe" font-family="Consolas, monospace" font-size="16">"question": "experience",</text>
+  <text x="176" y="494" fill="#fde68a" font-family="Consolas, monospace" font-size="16">"choice": "good"</text>
+  <text x="146" y="526" fill="#ffffff" font-family="Consolas, monospace" font-size="16">}</text>
+  <circle cx="770" cy="448" r="54" fill="#0f766e"/>
+  <path d="M744 449L762 467L798 424" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

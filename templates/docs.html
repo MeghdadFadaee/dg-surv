@@ -1,0 +1,117 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Survey Studio Docs</title>
+  <link rel="stylesheet" href="{% static 'surveys/site.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{% url 'welcome' %}">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>Survey Studio</span>
+    </a>
+    <nav class="top-nav" aria-label="Primary">
+      <a href="{% url 'welcome' %}">Home</a>
+      <a href="{% url 'survey-list' %}">API</a>
+      <a class="nav-action" href="{% url 'admin:index' %}">Admin</a>
+    </nav>
+  </header>
+
+  <main class="doc-layout">
+    <aside class="doc-toc" aria-label="Documentation sections">
+      <a href="#setup">Setup</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#api">API</a>
+      <a href="#answers">Answer Formats</a>
+      <a href="#config">Configuration</a>
+    </aside>
+
+    <article class="doc-content">
+      <p class="eyebrow">Documentation</p>
+      <h1>Survey Studio Docs</h1>
+      <p class="lead">
+        This service ships with a Django admin builder and public JSON endpoints
+        for rendering published surveys and receiving responses.
+      </p>
+
+      <section id="setup">
+        <h2>Setup</h2>
+        <pre><code>python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver</code></pre>
+      </section>
+
+      <section id="workflow">
+        <h2>Admin Workflow</h2>
+        <ol>
+          <li>Create a survey at <a href="{% url 'admin:index' %}">/admin/</a>.</li>
+          <li>Add questions inline on the survey page.</li>
+          <li>Add choices to single-choice and multiple-choice questions.</li>
+          <li>Set the survey status to <strong>Published</strong>.</li>
+        </ol>
+      </section>
+
+      <section id="api">
+        <h2>Public API</h2>
+        <div class="endpoint-list">
+          <div>
+            <span>GET</span>
+            <code>/api/surveys/</code>
+            <p>List published surveys.</p>
+          </div>
+          <div>
+            <span>GET</span>
+            <code>/api/surveys/&lt;slug&gt;/</code>
+            <p>Read the survey schema with questions and choices.</p>
+          </div>
+          <div>
+            <span>POST</span>
+            <code>/api/surveys/&lt;slug&gt;/responses/</code>
+            <p>Submit an anonymous response.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="answers">
+        <h2>Answer Formats</h2>
+        <pre><code>{
+  "respondent_email": "person@example.com",
+  "metadata": {
+    "source": "website"
+  },
+  "answers": [
+    {
+      "question": "name",
+      "value": "Alex"
+    },
+    {
+      "question": "experience",
+      "choice": "good"
+    }
+  ]
+}</code></pre>
+        <p>
+          Answers can also be sent as an object keyed by question slug. Choice
+          answers accept either the choice value or choice id.
+        </p>
+      </section>
+
+      <section id="config">
+        <h2>Configuration</h2>
+        <ul>
+          <li><code>DJANGO_SECRET_KEY</code>: required for production.</li>
+          <li><code>DJANGO_DEBUG</code>: set to <code>0</code> in production.</li>
+          <li><code>DJANGO_ALLOWED_HOSTS</code>: comma-separated host list.</li>
+          <li><code>SURVEY_API_CORS_ORIGINS</code>: comma-separated origin list for <code>/api/</code>.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
